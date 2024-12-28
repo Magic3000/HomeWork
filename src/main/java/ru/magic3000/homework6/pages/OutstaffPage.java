@@ -10,6 +10,9 @@ import static com.codeborne.selenide.Condition.*;
 import static com.codeborne.selenide.Selenide.$;
 import static com.codeborne.selenide.Selenide.page;
 
+/**
+ * Класс страницы аутстаффинга.
+ */
 public class OutstaffPage {
 
     /**

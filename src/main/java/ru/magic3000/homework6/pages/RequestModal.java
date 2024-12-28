@@ -7,6 +7,9 @@ import org.openqa.selenium.support.FindBy;
 import static com.codeborne.selenide.Condition.text;
 import static com.codeborne.selenide.Condition.visible;
 
+/**
+ * Класс модального окна заявки.
+ */
 public class RequestModal {
 
     final String FEEDBACK_MODAL = "//*[@class='fmo-parent']//*[@class='fb-modal-default']";
