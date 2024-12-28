@@ -1,4 +1,4 @@
-package ru.magic3000.homework6;
+package ru.magic3000.homework6.pages;
 
 import com.codeborne.selenide.SelenideElement;
 import io.qameta.allure.Step;
@@ -17,12 +17,20 @@ public class RequestModal {
     @FindBy(xpath = FEEDBACK_MODAL + "//input[@data-clear='text']/../..")
     private SelenideElement textInput;
 
+    /**
+     * Проверяет, что модальное окно Оставить заявку отобразилось на странице.
+     * @return текущий экземпляр класса
+     */
     @Step("Проверить, что модальное окно Оставить заявку отобразилось на странице")
     public RequestModal checkModalWindowVisible() {
         feedbackModalWindow.shouldBe(visible);
         return this;
     }
 
+    /**
+     * Проверяет, что текстовое поле присутствует.
+     * @return текущий экземпляр класса
+     */
     @Step("Проверить, что текстовое поле присутствует")
     public RequestModal checkTextInput() {
         textInput.shouldHave(text("Имя или организация"));
