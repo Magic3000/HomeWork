@@ -18,6 +18,9 @@ public class JdbcApp {
             //readEx();
             getFromTableByYear(2005);
             getFromTableByRating(70);
+            readEx();
+            updateRatingByName(100, "Witcher 3");
+            readEx();
         } catch (SQLException e) {
             e.printStackTrace();
         } finally {
@@ -43,6 +46,7 @@ public class JdbcApp {
     }
 
     private static void readEx() throws SQLException {
+        System.out.println("Table records:");
         try (ResultSet rs = statement.executeQuery("SELECT * FROM Games;")) {
             while (rs.next()) {
                 System.out.println(rs.getInt(1) + " " +
@@ -116,6 +120,11 @@ public class JdbcApp {
                         rs.getInt("Rating"));
             }
         }
+    }
+
+    private static void updateRatingByName(int rating, String name) throws SQLException {
+        System.out.println("Rating set on " + rating + " for record with Name " + name);
+        statement.executeUpdate("UPDATE Games SET Rating = " + rating + " WHERE Name = '" + name + "'");
     }
 
     private static void disconnect() {
